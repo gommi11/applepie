@@ -5,60 +5,74 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>크록스 면접 퀘스트</title>
 <style>
-:root{ color-scheme: light;
+:root{ color-scheme: light dark;
   --bg:#FAF9F5; --surface:#FFFFFF; --surface2:#F1EFE8; --surface3:#E5E3DB;
   --text:#1A1915; --text2:#5F5E5A; --text3:#908F87; --border:rgba(0,0,0,.12);
   --teal:#1D9E75; --tealD:#0F6E56; --tealBg:#E1F5EE; --amber:#EF9F27; --green:#3B6D11;
-  --radius:14px; --sans:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Segoe UI",Roboto,"Helvetica Neue",sans-serif;}
+  --radius:14px; --sans:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Segoe UI",Roboto,sans-serif;}
+@media (prefers-color-scheme:dark){
+  :root{ --bg:#1A1916; --surface:#262522; --surface2:#302F2B; --surface3:#3A3934;
+    --text:#F2F0E9; --text2:#B6B4AB; --text3:#88877F; --border:rgba(255,255,255,.13);
+    --tealBg:#123F33; }
+}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
 body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6;
-  padding:18px 14px 48px;max-width:560px;margin:0 auto;}
-h1{font-size:21px;font-weight:600;margin:2px 0 2px;}
-.sub{font-size:13px;color:var(--text2);margin:0 0 16px;}
+  padding:18px 14px 56px;max-width:580px;margin:0 auto;}
+h1{font-size:22px;font-weight:700;margin:2px 0 2px;}
+.sub{font-size:13px;color:var(--text2);margin:0 0 14px;}
 svg{display:block;}
 .ic{width:20px;height:20px;flex:none;}
+.actions{display:flex;gap:8px;margin:0 0 14px;flex-wrap:wrap;}
+.lk{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:14px;font-weight:600;
+  color:var(--tealD);background:var(--tealBg);border-radius:10px;padding:9px 14px;}
 .meter{position:sticky;top:0;z-index:5;background:var(--surface2);border-radius:var(--radius);padding:14px 16px;margin-bottom:16px;}
 .meterTop{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px;}
-.meterTitle{display:flex;align-items:center;gap:7px;font-size:15px;font-weight:500;}
-.lvl{font-size:12px;font-weight:600;color:var(--tealD);background:var(--tealBg);padding:4px 11px;border-radius:8px;white-space:nowrap;}
+.meterTitle{display:flex;align-items:center;gap:7px;font-size:15px;font-weight:600;}
+.lvl{font-size:12px;font-weight:700;color:var(--tealD);background:var(--tealBg);padding:4px 11px;border-radius:8px;white-space:nowrap;}
 .track{height:14px;background:var(--surface3);border-radius:999px;overflow:hidden;}
 .fill{height:100%;width:0;background:var(--teal);border-radius:999px;transition:width .45s ease;}
 .meterFoot{display:flex;justify-content:space-between;margin-top:6px;font-size:12px;color:var(--text2);}
-.pct{font-weight:600;color:var(--text);}
-.card{background:var(--surface);border:.5px solid var(--border);border-radius:var(--radius);padding:14px;margin-bottom:12px;}
+.pct{font-weight:700;color:var(--text);}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:14px;margin-bottom:12px;}
 .head{display:flex;align-items:center;gap:8px;margin-bottom:6px;}
-.head .t{font-size:15px;font-weight:600;}
+.head .t{font-size:15px;font-weight:700;}
 .head .ic{color:var(--text2);}
 .tag{font-size:11px;color:var(--text3);background:var(--surface2);padding:2px 9px;border-radius:8px;white-space:nowrap;}
-.clear{margin-left:auto;display:none;font-size:11px;font-weight:600;color:var(--tealD);align-items:center;gap:4px;}
+.clear{margin-left:auto;display:none;font-size:11px;font-weight:700;color:var(--tealD);align-items:center;gap:4px;}
 .clear .ic{width:15px;height:15px;}
 .task{display:flex;align-items:flex-start;gap:10px;width:100%;text-align:left;background:transparent;border:0;
   border-radius:10px;padding:11px 8px;cursor:pointer;font-family:inherit;color:inherit;transition:background .15s;}
 .task:active{background:var(--surface2);}
-.box{width:23px;height:23px;flex:none;margin-top:0;color:var(--text3);}
+.box{width:23px;height:23px;flex:none;color:var(--text3);}
 .lbl{font-size:14px;line-height:1.5;flex:1;}
-.xp{flex:none;font-size:11px;font-weight:600;color:var(--tealD);background:var(--tealBg);padding:2px 8px;border-radius:999px;margin-top:1px;}
+.lbl b{color:var(--teal);font-weight:700;}
+.xp{flex:none;font-size:11px;font-weight:700;color:var(--tealD);background:var(--tealBg);padding:2px 8px;border-radius:999px;margin-top:1px;}
 .task.done .box{color:var(--teal);}
 .task.done .lbl{text-decoration:line-through;color:var(--text3);}
+.task.done .lbl b{color:var(--text3);}
 .task.done{background:var(--surface2);}
 .boss{margin-top:16px;border:2px solid var(--border);border-radius:var(--radius);padding:16px;background:var(--surface);opacity:.55;transition:opacity .4s,border-color .4s;}
 .bossHead{display:flex;align-items:center;gap:9px;margin-bottom:8px;}
 .bossHead .ic{width:22px;height:22px;color:var(--amber);}
-.bossHead .t{font-size:15px;font-weight:600;}
+.bossHead .t{font-size:15px;font-weight:700;}
 .lock{margin-left:auto;display:flex;align-items:center;gap:4px;font-size:12px;color:var(--text3);}
 .lock .ic{width:15px;height:15px;}
 .mantra{margin:0;font-size:13px;color:var(--text2);}
-.mantra b{color:var(--text);font-weight:600;}
-.win{display:none;align-items:center;gap:6px;margin-top:10px;font-size:14px;color:var(--tealD);font-weight:600;}
+.mantra b{color:var(--text);font-weight:700;}
+.win{display:none;align-items:center;gap:6px;margin-top:10px;font-size:14px;color:var(--tealD);font-weight:700;}
 .win .ic{width:18px;height:18px;}
-.reset{margin:22px auto 0;display:flex;align-items:center;gap:6px;background:transparent;border:.5px solid var(--border);
+.reset{margin:22px auto 0;display:flex;align-items:center;gap:6px;background:transparent;border:1px solid var(--border);
   color:var(--text2);font-family:inherit;font-size:13px;padding:9px 16px;border-radius:10px;cursor:pointer;}
 .reset .ic{width:15px;height:15px;}
 </style>
 </head>
 <body>
 <h1>면접 퀘스트</h1>
-<p class="sub">크록스코리아 · Sr. Digital Marketing Specialist · 6/11(목) 오전 10:00</p>
+<p class="sub">크록스코리아 · Sr. Specialist, Digital Activation · 내일 오전 10:00</p>
+
+<div class="actions">
+  <a class="lk" href="jd.html"><span class="ic" data-i="book"></span> JD 분석 · 영단어장 열기</a>
+</div>
 
 <div class="meter">
   <div class="meterTop">
@@ -72,9 +86,9 @@ svg{display:block;}
 <div id="board"></div>
 
 <div class="boss" id="boss">
-  <div class="bossHead"><span class="ic" data-i="trophy"></span><span class="t">보스전 · 면접 10:00</span>
+  <div class="bossHead"><span class="ic" data-i="trophy"></span><span class="t">보스전 · 내일 10:00 면접</span>
     <span class="lock" id="lock"><span class="ic" data-i="lock"></span> 잠김</span></div>
-  <p class="mantra">만트라: <b>"천천히, 또렷하게, 숫자로 착지 — 그리고 한 사람이 통합 수행."</b></p>
+  <p class="mantra">만트라: <b>"온사이트 오너 · 데이터로 검증 · 조직 설득해 매출로 연결."</b></p>
   <div class="win" id="win"><span class="ic" data-i="star"></span> 모든 퀘스트 클리어! 준비 끝. 가현님답게 보여주고 와요.</div>
 </div>
 
@@ -86,38 +100,36 @@ var ICON={
  check:'<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9" fill="currentColor" stroke="none"/><path d="M8 12.5l2.5 2.5 5-5.5" stroke="#fff"/></svg>',
  target:'<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.4" fill="currentColor"/></svg>',
  moon:'<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14.8A8 8 0 1 1 9.2 5a6.3 6.3 0 0 0 9.8 9.8z"/></svg>',
- tennis:'<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M5.5 5.5A8 8 0 0 1 8 18M18.5 5.5A8 8 0 0 0 16 18"/></svg>',
  sunrise:'<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 18h18M8 18a4 4 0 0 1 8 0M12 4v4M5 9l1.5 1.5M19 9l-1.5 1.5"/></svg>',
  trophy:'<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 4h8v5a4 4 0 0 1-8 0zM8 6H5v1a3 3 0 0 0 3 3M16 6h3v1a3 3 0 0 1-3 3M9 20h6M12 13v4"/></svg>',
  lock:'<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>',
  lockOpen:'<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 7.5-1.8"/></svg>',
  star:'<svg class="ic" viewBox="0 0 24 24" fill="currentColor" stroke="none"><path d="M12 3l2.5 5.5L20 9l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-.5z"/></svg>',
+ book:'<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2zM18 17H6"/></svg>',
  refresh:'<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12a8 8 0 0 1 14-5l2 2M20 12a8 8 0 0 1-14 5l-2-2M18 4v5h-5M6 20v-5h5"/></svg>'
 };
 function paintIcons(root){root.querySelectorAll('[data-i]').forEach(function(s){s.innerHTML=ICON[s.dataset.i]||'';});}
 
 var STAGES=[
- {id:"s1",title:"오늘 밤",tag:"D-2 · 5분",icon:"moon",tasks:[
-   ["핵심 한 줄 포지셔닝 소리내어 1번 읽기",10],
-   ["폰 알람 2개 (내일 밤 준비 / 모레 8:00 기상)",10],
-   ["7시간+ 자기 — 잠이 최고의 면접 준비",20]]},
- {id:"s2",title:"내일 테니스 다녀온 뒤",tag:"D-1 저녁 · 35분",icon:"tennis",tasks:[
-   ["회사 브리프 1번 읽기 (Crocs=개인화·IP·소셜로 성장)",10],
-   ["핵심 숫자 5개 외우기: 0→40% · ROAS 13배 · 100억 · 회원 1만 · 신규 65%",15],
+ {id:"s1",title:"오늘 밤 (지금~취침)",tag:"D-DAY 전야 · 40분 + 잠",icon:"moon",tasks:[
+   ["<b>JD 분석 시트</b> 1번 정독 — 6대 업무 + 한 줄 정의 (위 버튼)",10],
+   ["<b>필수 영단어 Top 12</b> 소리내어 3번 (셀프테스트로 점검)",15],
    ["자기소개(Tell me about yourself) 영어로 소리내어 3번",15],
-   ["G/FORE 0→1 STAR 답변 소리내어 1번",10],
-   ["crocs.co.kr 3분 둘러보고 느낀 점 1줄 메모",10],
-   ["역질문 3개 골라 표시해두기",10],
-   ["복장 꺼내두기 + 이력서 3부 + 메모지·펜",10]]},
- {id:"s3",title:"면접 당일 아침",tag:"D-Day · 20분",icon:"sunrise",tasks:[
-   ["샤워하며 영어 프레임 5개 소리내어",10],
-   ["핵심 숫자 2개 플래시 복습 (0→40% · 13배)",10],
+   ["핵심 숫자 5개 입에 붙이기: 0→40% · ROAS 13배 · 100억 · 회원 1만 · 외부채널 20→50%",15],
+   ["\"온사이트 운영+거버넌스\" 내 경험 1줄 매칭 (WAAC 멀티채널 MD / G/FORE 자사몰)",10],
+   ["내일 복장 꺼내두기 + 이력서 3부 + 메모지·펜",10],
+   ["폰 알람 2개 (기상 + 출발 시간) 맞추기",10],
+   ["<b>7시간 자기</b> — 잠이 최고의 면접 준비",25]]},
+ {id:"s2",title:"내일 아침 (10시 전)",tag:"D-DAY · 30분",icon:"sunrise",tasks:[
+   ["물 마시고 샤워하며 Top 12 단어 다시 소리내어",10],
+   ["JD 한 줄 정의 + 6대 업무 키워드 빠르게 훑기 (위 버튼)",10],
+   ["자기소개 영어로 1번 + 역질문 3개 확인",10],
    ["파워포즈 2분 (어깨 펴기 — 자신감 스위치)",10],
-   ["9:30 도착 목표로 출발 · 동선 최종확인",15],
+   ["9:30 도착 목표로 출발 · 동선·주차 최종확인",15],
    ["입장 전 심호흡 + 만트라 1번",10]]}
 ];
 var LEVELS=[[0,"Lv.1 긴장한 지원자"],[25,"Lv.2 워밍업 완료"],[50,"Lv.3 준비된 후보자"],[75,"Lv.4 자신감 풀충전"],[100,"Lv.5 합격각"]];
-var KEY="crocsQuest_v1",saved={};
+var KEY="crocsQuest_v2",saved={};
 try{saved=JSON.parse(localStorage.getItem(KEY)||"{}");}catch(e){}
 
 var board=document.getElementById("board"),totalXP=0,idx=0;
@@ -169,7 +181,7 @@ function update(){
   var win=pct>=100,boss=document.getElementById("boss");
   boss.style.opacity=win?"1":(pct>=50?"0.85":"0.55");
   boss.style.borderColor=win?"#1D9E75":"var(--border)";
-  document.getElementById("lock").innerHTML=win?'<span class="ic" data-i="lockOpen" style="color:#0F6E56"></span> <span style="color:#0F6E56;font-weight:600">해제</span>':'<span class="ic" data-i="lock"></span> 잠김';
+  document.getElementById("lock").innerHTML=win?'<span class="ic" data-i="lockOpen" style="color:#0F6E56"></span> <span style="color:#0F6E56;font-weight:700">해제</span>':'<span class="ic" data-i="lock"></span> 잠김';
   paintIcons(document.getElementById("lock"));
   document.getElementById("win").style.display=win?"flex":"none";
 }
