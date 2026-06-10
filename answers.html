@@ -50,6 +50,8 @@ body.quiz .ko{display:none;}
 .numbox .row{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:baseline;font-size:15px;margin:6px 0;}
 .numbox .ko2{color:var(--text2);min-width:140px;font-weight:600;}
 .tip{font-size:13px;color:var(--text3);margin:6px 0 0 37px;}
+.vlabel{font-size:13px;font-weight:700;color:var(--text2);margin:16px 0 6px;}
+.vlabel.mine{color:var(--pink);}
 footer{margin-top:30px;font-size:14px;color:var(--text2);text-align:center;}
 </style>
 </head>
@@ -81,8 +83,21 @@ footer{margin-top:30px;font-size:14px;color:var(--text2);text-align:center;}
   <div class="row"><span class="ko2">글로벌 $40억</span> four billion dollars <span class="say">포 빌리언 달러스</span></div>
 </div>
 
+<div class="numbox">
+  <h3>② 주요 성과 (Key achievements) — 영어 + 한국어</h3>
+  <div class="row"><span class="ko2">자사몰 매출 비중</span> Official-site revenue share: <b>zero to forty percent</b> <span class="say">지로 투 포-티 퍼센트</span> — now the <b>number-one channel</b></div>
+  <div class="row"><span class="ko2">3년 누적 매출</span> Cumulative revenue, 3 yrs: <b>ten billion won</b> <span class="say">텐 빌리언 원</span> (100억)</div>
+  <div class="row"><span class="ko2">연간 MAU</span> Annual MAU: <b>over one million</b> <span class="say">오버 원 밀리언</span> (100만+)</div>
+  <div class="row"><span class="ko2">네이버 브랜드검색</span> Naver brand search: <b>120 million won</b> <span class="say">원 헌드레드 트웬티 밀리언 원</span> spend → <b>1.64 billion won</b> <span class="say">원 포인트 식스-포 빌리언 원</span> revenue (≈13x ROAS)</div>
+  <div class="row"><span class="ko2">카카오 플친 메시지</span> Kakao Plus Friend messages: <b>8x+ ROAS</b> <span class="say">에잇 타임즈</span> (선오픈 평균 약 800%)</div>
+  <div class="row"><span class="ko2">연 광고예산</span> Annual ad budget: <b>400 million won</b> <span class="say">포 헌드레드 밀리언 원</span>, managed solo (4억 단독 운영)</div>
+  <div class="row"><span class="ko2">캠페인 효율</span> Campaign efficiency: production cost <b>−58%</b>, conversion revenue <b>+40%</b> (제작비↓ 전환매출↑)</div>
+  <div class="row"><span class="ko2">온라인 단독상품</span> Online-exclusive products: <b>top 3 sellers all exclusive</b> (매출 1~3위 전부)</div>
+</div>
+
 <div class="q"><span class="n">Q1</span><span>간단히 본인 소개 부탁드려요</span></div>
 <p class="qen">Tell me about yourself.</p>
+<p class="vlabel">버전 A — Claude 작성 (영어, 짧고 임팩트)</p>
 <div class="card">
   <div class="en">
   "Hi, I'm Ga-hyun Park. For the past <span class="hl t">ten years</span><span class="say">텐 이어스</span> at Kolon Industries FnC, I worked in the sports and golf fashion category, and I grew from an online MD into the <span class="hl">single owner of the whole onsite platform</span>.
@@ -92,6 +107,27 @@ footer{margin-top:30px;font-size:14px;color:var(--text2);text-align:center;}
   Now I want to bring that onsite and launch experience to a global brand like Crocs, and keep asking the next question: <span class="hl b">how do we make every launch faster, cleaner, and more loved by customers?</span>"
   </div>
   <div class="ko"><b>핵심:</b> 10년 / MD→마케팅→온사이트 단일 담당자 / "누가 왜 사는가" 질문 / G/FORE 0→40% 1위 채널 / 앞으로 던지고 싶은 질문으로 마무리.</div>
+</div>
+
+<p class="vlabel mine">버전 B — 가현님 작성 (한국어 원문) ★ 내가 쓴 버전</p>
+<div class="card">
+  <div class="en" style="font-size:16px;line-height:1.8;">
+  "안녕하세요. 크록스 시니어 스페셜리스트에 지원한 박가현입니다. 지난 <span class="hl">10년간</span> 이커머스에서 패션·스포츠·골프 브랜드의 매니저를 담당했고, 최근 <span class="hl">3년은 G/FORE</span> 브랜드의 단일 온라인 마케팅·세일즈 담당자로 자사몰 성장에 집중했습니다.
+  제 커리어는 <span class="hl b">'고객이 무엇을, 왜 사는가'</span>라는 질문에 포커싱돼 있습니다. 소비재 트렌드와 상품에서 답을 찾던 MD 커리어를 지나, 고객의 유입과 전환을 이해하고 싶어 마케팅까지 맡아 두 업무를 함께 수행했습니다.
+  MD와 마케팅을 모두 할 줄 아는 경력을 인정받아, <span class="hl">코오롱 전체 매출의 10% 이상</span>을 차지하는 메가 브랜드 G/FORE의 디지털 매니저로 자사몰 런칭부터 <span class="hl">현재 매출 비중 1위</span>까지 담당했습니다.
+  자사몰 멤버십으로 매출 비중을 <span class="hl t">0→40%</span>로 키웠고, <span class="hl t">연간 100만+ MAU</span>, <span class="hl p">카카오톡 플러스친구 ROAS 8배+</span>, 온라인 단독상품 1위를 꾸준히 달성하고 있습니다. 크록스에서 이 경험을 확장해 디지털 액티베이션에 기여하고 싶습니다. 감사합니다."
+  </div>
+</div>
+
+<p class="vlabel mine">버전 B — 영어로 (발음 포함)</p>
+<div class="card">
+  <div class="en">
+  "Hello, I'm Ga-hyun Park, applying for the Senior Specialist role at Crocs. For the past <span class="hl t">ten years</span><span class="say">텐 이어스</span> I've managed fashion, sports, and golf brands in e-commerce, and for the <span class="hl t">last three years</span><span class="say">라스트 쓰리 이어스</span> I focused on growing the <span class="hl">G/FORE official site</span> as its single owner for online marketing and sales.
+  My career centers on one question — <span class="hl b">'what do customers buy, and why?'</span> I started as an MD, finding answers in product and consumer trends; then, wanting to understand how customers arrive and convert, I took on marketing too and ran both roles together.
+  Because I can do both, I became the digital manager of G/FORE — <span class="hl">a mega-brand that's over ten percent</span><span class="say">오버 텐 퍼센트</span> of Kolon's total revenue — and I owned it from launch to its current <span class="hl">number-one revenue share</span>.
+  Through membership, I grew the site's share from <span class="hl t">zero to forty percent</span><span class="say">지로 투 포-티 퍼센트</span>, with <span class="hl t">over one million annual MAU</span><span class="say">오버 원 밀리언</span>, <span class="hl p">Kakao Plus Friend ROAS above eight times</span><span class="say">에잇 타임즈</span>, and consistently the top online-exclusive products. I'd love to expand this experience at Crocs and contribute to Digital Activation. Thank you."
+  </div>
+  <div class="ko"><b>핵심:</b> 가현님 원문을 영어로. 두 버전 중 편한 쪽을 고르되, 숫자(0→40%, 8배, 100만 MAU, 10%)는 또박또박.</div>
 </div>
 
 <div class="q"><span class="n">Q2</span><span>이 포지션을 어떻게 이해하고, 비슷한 일을 해봤나요? 지금 업무 플로우는?</span></div>
