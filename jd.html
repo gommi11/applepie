@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>크록스 JD 분석 · Sr. Specialist, Digital Activation</title>
+<style>
+:root{
+  --bg:#FAF9F5; --surface:#FFFFFF; --surface2:#F3F1EA; --line:rgba(0,0,0,.10);
+  --text:#1A1915; --text2:#56554F; --text3:#8B8A82;
+  --amber:#9A5B00; --amberBg:#FBE9C7; --teal:#0F6E56; --tealBg:#D8F0E7;
+  --blue:#11507F; --blueBg:#DCEBFA; --pink:#9B2F55; --pinkBg:#F8DFE9;
+  --radius:16px; --sans:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Segoe UI",Roboto,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --bg:#1A1916; --surface:#262522; --surface2:#302F2B; --line:rgba(255,255,255,.12);
+    --text:#F2F0E9; --text2:#B6B4AB; --text3:#88877F;
+    --amber:#F0C173; --amberBg:#4A3413; --teal:#7FD8B9; --tealBg:#123F33;
+    --blue:#8Fc0EE; --blueBg:#11324F; --pink:#F0A6C0; --pinkBg:#47192C; }
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);
+  line-height:1.7;font-size:17px;padding:18px 16px 60px;max-width:760px;margin:0 auto;}
+h1{font-size:24px;font-weight:700;margin:2px 0 4px;letter-spacing:-.01em;}
+h2{font-size:19px;font-weight:700;margin:30px 0 12px;display:flex;align-items:center;gap:9px;}
+h2 .n{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;
+  background:var(--text);color:var(--bg);border-radius:8px;font-size:14px;flex:none;}
+.sub{font-size:14px;color:var(--text2);margin:0 0 14px;}
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 6px;}
+.chip{font-size:13px;background:var(--surface2);color:var(--text2);padding:5px 12px;border-radius:999px;}
+.lead{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px 18px;margin:18px 0;font-size:16px;}
+.lead b{color:var(--teal);}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:16px 18px;margin:12px 0;}
+.card .en{font-size:16px;line-height:1.75;}
+.card .ko{margin-top:10px;padding-top:10px;border-top:1px dashed var(--line);
+  font-size:15px;color:var(--text2);}
+.card .ko b{color:var(--text);font-weight:600;}
+.hl{background:var(--amberBg);color:var(--amber);padding:1px 5px;border-radius:5px;font-weight:600;white-space:nowrap;}
+.hl.t{background:var(--tealBg);color:var(--teal);}
+.hl.b{background:var(--blueBg);color:var(--blue);}
+.hl.p{background:var(--pinkBg);color:var(--pink);}
+.bar{position:sticky;top:0;z-index:9;background:var(--bg);padding:10px 0;margin:0 -2px 4px;
+  display:flex;gap:8px;flex-wrap:wrap;border-bottom:1px solid var(--line);}
+.btn{font-family:inherit;font-size:14px;font-weight:600;background:var(--surface);color:var(--text);
+  border:1px solid var(--line);border-radius:10px;padding:9px 14px;cursor:pointer;}
+.btn.on{background:var(--teal);color:#fff;border-color:var(--teal);}
+.vgrid{display:grid;grid-template-columns:1fr;gap:10px;}
+@media(min-width:560px){.vgrid{grid-template-columns:1fr 1fr;}}
+.voc{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:13px 15px;cursor:pointer;transition:border-color .15s;}
+.voc:active{border-color:var(--teal);}
+.voc .term{font-size:16px;font-weight:700;}
+.voc .pron{font-size:13px;color:var(--text3);margin-left:6px;font-weight:400;}
+.voc .mean{margin-top:6px;font-size:15px;color:var(--text2);}
+.voc .ctx{margin-top:4px;font-size:13px;color:var(--text3);}
+body.quiz .voc .mean,body.quiz .voc .ctx{display:none;}
+body.quiz .voc.open .mean,body.quiz .voc.open .ctx{display:block;}
+body.quiz .voc::after{content:"탭하면 뜻 보기";display:block;margin-top:6px;font-size:12px;color:var(--text3);}
+body.quiz .voc.open::after{display:none;}
+.grouph{font-size:14px;font-weight:700;color:var(--text2);margin:18px 0 8px;}
+.top{background:var(--tealBg);border-radius:var(--radius);padding:14px 18px;margin:14px 0;}
+.top h3{margin:0 0 8px;font-size:16px;color:var(--teal);}
+.top ol{margin:0;padding-left:20px;}
+.top li{margin:5px 0;font-size:15px;}
+.top li b{font-weight:700;}
+.note{font-size:13px;color:var(--text3);margin-top:8px;}
+footer{margin-top:30px;font-size:14px;color:var(--text2);text-align:center;}
+</style>
+</head>
+<body>
+
+<h1>Sr. Specialist, Digital Activation</h1>
+<p class="sub">Crocs Korea · JD 분석 & 영단어 암기 시트</p>
+<div class="facts">
+  <span class="chip">Requisition 13930</span>
+  <span class="chip">강남구 · Hybrid</span>
+  <span class="chip">Collaborator = 주 4일 출근</span>
+  <span class="chip">한국어 능통 + 비즈니스 영어 필수</span>
+  <span class="chip">경력 5년+</span>
+</div>
+
+<div class="lead">
+  <b>한 줄 정의:</b> 크록스코리아 <span class="hl t">자사몰(.COM)·앱(APP)</span>의 <span class="hl">온사이트 운영 로컬 책임자</span>.
+  본사 <span class="hl b">Digital Hub</span>가 실제 세팅을 실행하고, 나는 <b>기획·브리프·검증·거버넌스·최종책임</b>을 갖고
+  상품 런칭과 캠페인이 정확하고 안정적으로 오픈되게 만든다.
+</div>
+
+<div class="bar">
+  <button class="btn" id="quizBtn">단어장 셀프테스트: 끄기</button>
+  <button class="btn" id="topBtn">필수 단어 Top 12로</button>
+</div>
+
+<h2><span class="n">A</span>What You'll Do — 6대 업무</h2>
+
+<div class="card">
+  <div class="en"><b>1. Onsite Platform Ownership &amp; Digital Hub Governance.</b>
+  Act as the local <span class="hl">Onsite Platform Owner</span> and <span class="hl">SPOC</span> for .COM and APP under the <span class="hl b">Digital Hub</span> model.
+  Own <span class="hl">brief</span> quality, <span class="hl">prioritization</span>, <span class="hl">validation</span>, and <span class="hl">go-live sign-off</span> for all Hub-executed tasks.
+  Proactively <span class="hl p">escalate</span> risks, gaps, and <span class="hl">SLA</span> issues, and drive resolution with Hub and regional <span class="hl">stakeholders</span>.</div>
+  <div class="ko"><b>온사이트 플랫폼 책임 & 허브 거버넌스</b> — .COM/APP의 로컬 책임자이자 단일 창구(SPOC). 허브가 실행하는 모든 업무의 브리프 품질·우선순위·검증·오픈 최종승인을 소유. 리스크·SLA 이슈를 선제적으로 제기하고 허브·리저널과 해결.</div>
+</div>
+
+<div class="card">
+  <div class="en"><b>2. Product Launch &amp; Inventory Readiness Governance.</b>
+  Oversee <span class="hl">end-to-end</span> product launch readiness, from <span class="hl">Order Master</span> validation through post-launch checks.
+  Ensure product data accuracy, <span class="hl">localization</span>, <span class="hl p">embargo</span> handling, <span class="hl">inventory readiness</span>, system <span class="hl">sync</span> validation between <span class="hl b">SAP</span> and <span class="hl b">SFCC</span>, and launch timing.
+  Partner with <span class="hl">MD</span>, D&amp;L, and the Hub to ensure products are visible, <span class="hl">purchasable</span>, and <span class="hl">compliant</span> at launch.</div>
+  <div class="ko"><b>상품 런칭 & 재고 준비 거버넌스</b> — 출시 준비를 처음부터 끝까지 관리. 상품 데이터 정확성·현지화·엠바고(공개시점)·재고·SAP↔SFCC 동기화·출시 타이밍 검증. MD·물류와 협업해 오픈 시 상품이 노출·구매가능·규정준수 되게.</div>
+</div>
+
+<div class="card">
+  <div class="en"><b>3. Onsite Merchandising &amp; Visibility Control.</b>
+  Own onsite <span class="hl">merchandising</span> strategy and oversee execution of <span class="hl">category sorting</span>, <span class="hl">pinning logic</span>, and <span class="hl">search relevance</span>.
+  Ensure correct product <span class="hl">visibility</span> across <span class="hl b">PLP</span>, <span class="hl b">LP</span>, search, and key <span class="hl">entry pages</span>.</div>
+  <div class="ko"><b>온사이트 머천다이징 & 노출 관리</b> — 사이트 내 진열 전략 총괄. 카테고리 정렬·상단 고정(핀)·검색 연관도 실행 감독. 상품목록페이지(PLP)·랜딩페이지(LP)·검색·주요 진입페이지에서 상품이 제대로 보이게.</div>
+</div>
+
+<div class="card">
+  <div class="en"><b>4. GTM Campaign, Promotion &amp; Content Governance.</b>
+  Oversee promotion setup accuracy and <span class="hl">go-live</span> readiness, including pricing, <span class="hl p">stacking</span>, coupons, and schedules.
+  Own <span class="hl b">GTM</span> calendar planning and onsite campaigns aligned with global and regional plans.
+  Create and manage <span class="hl">briefs</span> for campaigns, promotions, and content.</div>
+  <div class="ko"><b>GTM 캠페인·프로모션·콘텐츠 거버넌스</b> — 프로모션 세팅 정확성·오픈 준비 감독(가격·쿠폰 중복적용·일정). GTM(출시) 캘린더와 온사이트 캠페인을 글로벌·리저널 계획에 맞춰 기획. 캠페인·프로모션·콘텐츠 브리프 작성·관리.</div>
+</div>
+
+<div class="card">
+  <div class="en"><b>5. Operational Governance.</b>
+  Oversee <span class="hl">QA</span> standards for product, promotion, content, and <span class="hl">UX</span> before and after go-live.
+  Maintain operational <span class="hl">compliance</span>, data accuracy, and platform <span class="hl">stability</span>.
+  Partner with CS, DC, D&amp;L, and Finance on <span class="hl p">reconciliation</span> and daily order reviews.</div>
+  <div class="ko"><b>운영 거버넌스</b> — 오픈 전후 상품·프로모션·콘텐츠·UX 품질검수(QA) 기준 감독. 운영 규정준수·데이터 정확성·플랫폼 안정성 유지. 고객서비스(CS)·물류센터(DC)·유통·재무팀과 정산 대사·일일 주문 점검 협업.</div>
+</div>
+
+<div class="card">
+  <div class="en"><b>6. Performance Review &amp; Continuous Improvement.</b>
+  Review onsite performance after launches and campaigns with key <span class="hl">stakeholders</span>.
+  Turn <span class="hl t">insights into actions</span> that improve the consumer journey and <span class="hl">trading performance</span>.
+  Partner with the Digital Hub and regional teams to strengthen tools, processes, and operating standards.</div>
+  <div class="ko"><b>성과 리뷰 & 지속 개선</b> — 출시·캠페인 후 성과를 유관팀과 리뷰. 인사이트를 고객여정·판매(거래) 성과 개선 액션으로 전환. 허브·리저널과 툴·프로세스·운영 기준 강화.</div>
+</div>
+
+<div class="card">
+  <div class="en"><b>How this role works with the Digital Hub.</b>
+  Local <span class="hl b">DAT</span> owns strategy, planning, briefs, validation, governance, and final <span class="hl">accountability</span>.
+  The Digital Hub executes <span class="hl">configuration</span>, <span class="hl">publishing</span>, setup, and development based on approved briefs.</div>
+  <div class="ko"><b>허브와의 역할 분담</b> — 로컬 DAT(이 직무 팀)는 전략·기획·브리프·검증·거버넌스·<b>최종 책임</b>을 소유. 디지털 허브는 승인된 브리프대로 설정·게시·세팅·개발을 <b>실행</b>. 즉 나는 "지시·검증·책임", 허브는 "손". </div>
+</div>
+
+<h2><span class="n">B</span>What You'll Bring — 지원 자격</h2>
+<div class="card">
+  <div class="en">
+  • <span class="hl">5+ years</span> in <span class="hl">eCommerce onsite operations</span> or platform management<br>
+  • Strong understanding of onsite platforms (<span class="hl b">SFCC</span>, <span class="hl b">CMS</span>) with ability to <span class="hl">govern execution without direct setup</span><br>
+  • Strong <span class="hl">analytical</span> skills to develop <span class="hl t">data-driven consumer journeys</span><br>
+  • Excellent <span class="hl">cross-functional</span> communication and <span class="hl">stakeholder management</span><br>
+  • <span class="hl p">Fluent in Korean; business-level English required</span></div>
+  <div class="ko">이커머스 <b>온사이트 운영/플랫폼 관리 5년+</b> · SFCC·CMS 이해(<b>직접 세팅 안 해도 실행을 통제</b>할 수 있는 거버넌스 역량) · 데이터 기반 고객여정 설계 · 부서간 소통·이해관계자 관리 · 한국어 능통 + 비즈니스 영어 필수.</div>
+</div>
+
+<h2><span class="n">C</span>필수 영단어장 — 탭하면 뜻</h2>
+<p class="sub">위의 "셀프테스트 켜기"를 누르면 뜻이 가려져요. 단어를 보고 뜻을 떠올린 뒤 탭해서 확인하세요.</p>
+
+<div class="grouph">① 운영 · 거버넌스</div>
+<div class="vgrid" id="g1"></div>
+<div class="grouph">② 상품 런칭 · 시스템</div>
+<div class="vgrid" id="g2"></div>
+<div class="grouph">③ 머천다이징 · 페이지</div>
+<div class="vgrid" id="g3"></div>
+<div class="grouph">④ 캠페인 · 프로모션</div>
+<div class="vgrid" id="g4"></div>
+<div class="grouph">⑤ 협업 · 기타</div>
+<div class="vgrid" id="g5"></div>
+
+<h2 id="topsec"><span class="n">D</span>오늘 입에 붙일 Top 12</h2>
+<div class="top">
+  <h3>차 안 20분 — 이 12개만 줄줄 나오면 성공</h3>
+  <ol>
+    <li><b>onsite</b> [온사이트] 자사몰·앱 사이트 <b>내부</b> 운영</li>
+    <li><b>governance</b> [거버넌스] 관리·통제·의사결정 체계</li>
+    <li><b>SPOC</b> [에스폭] 단일 창구 담당자</li>
+    <li><b>brief</b> [브리프] 업무 지시서·요청서</li>
+    <li><b>validation</b> [밸리데이션] 검증</li>
+    <li><b>go-live sign-off</b> 오픈(런칭) 최종 승인</li>
+    <li><b>escalate</b> [에스컬레이트] 윗선·유관팀에 이슈 제기</li>
+    <li><b>SLA</b> 서비스 처리 기준·기한 합의</li>
+    <li><b>SFCC</b> Salesforce Commerce Cloud — 자사몰 커머스 플랫폼</li>
+    <li><b>merchandising</b> [머천다이징] 사이트 진열·구성 전략</li>
+    <li><b>reconciliation</b> [리컨실리에이션] (정산) 대사·맞춤 확인</li>
+    <li><b>stakeholder</b> [스테이크홀더] 이해관계자·유관부서</li>
+  </ol>
+  <p class="note">발음 한글은 입에 붙이기용 근사치예요. 소리 내어 5번씩!</p>
+</div>
+
+<footer>면접 화이팅, 가현님 — 이 JD는 "온사이트 운영 + 거버넌스"가 핵심이에요.</footer>
+
+<script>
+var V={
+ g1:[
+  ["onsite","온사이트","자사몰·앱 사이트 내부의(운영)","'.COM/APP 화면 안'을 뜻함"],
+  ["governance","거버넌스","관리·통제·의사결정 체계","직접 실행이 아니라 '관리·승인'"],
+  ["ownership / owner","오너십","주인의식·전담 책임","local owner = 로컬 전담 책임자"],
+  ["SPOC","에스폭","단일 연락 창구(Single Point of Contact)","이슈가 다 나에게 모이는 담당"],
+  ["brief","브리프","업무 지시서·요청서","허브에 넘기는 작업 요청 문서"],
+  ["prioritization","프라이어리타이제이션","우선순위 결정",""],
+  ["validation","밸리데이션","검증·확인","오픈 전 데이터·세팅 확인"],
+  ["go-live sign-off","고라이브 사인오프","오픈(런칭) 최종 승인","'이제 열어도 됨' 결재"],
+  ["escalate","에스컬레이트","윗선·유관팀에 이슈를 올리다","문제를 빨리 보고·확대"],
+  ["SLA","에스엘에이","서비스 수준 합의(처리 기준·기한)","허브가 며칠 안에 처리하기로 한 약속"],
+  ["stakeholder","스테이크홀더","이해관계자·유관부서","함께 일하는 팀들"],
+  ["accountability","어카운터빌리티","최종 책임","결과에 대한 책임을 짐"]
+ ],
+ g2:[
+  ["end-to-end","엔드투엔드","처음부터 끝까지 전 과정",""],
+  ["readiness","레디니스","준비 상태","launch readiness = 출시 준비 상태"],
+  ["Order Master","오더 마스터","상품 기준정보(마스터 데이터)","상품 등록 원본 데이터"],
+  ["localization","로컬라이제이션","현지화","한국 시장에 맞게 변환"],
+  ["embargo","엠바고","공개 시점 통제(금지)","정해진 때 전엔 노출 금지"],
+  ["inventory","인벤토리","재고",""],
+  ["sync (synchronization)","싱크","동기화","두 시스템 데이터 맞춤"],
+  ["SAP","에스에이피","전사 자원관리(ERP) 시스템","재고·주문 기간계"],
+  ["SFCC","에스에프씨씨","Salesforce Commerce Cloud","자사몰 커머스 플랫폼(솔루션)"],
+  ["purchasable","퍼처서블","구매 가능한",""],
+  ["compliant","컴플라이언트","규정에 맞는","compliance = 규정 준수"]
+ ],
+ g3:[
+  ["merchandising","머천다이징","상품 진열·구성 전략","무엇을 어디에 보여줄지"],
+  ["category sorting","카테고리 소팅","카테고리 정렬",""],
+  ["pinning logic","피닝 로직","상단 고정(핀) 규칙","특정 상품을 위로 고정"],
+  ["search relevance","서치 릴러번스","검색 연관도·적합도","검색 결과 정확도"],
+  ["visibility","비저빌리티","노출(잘 보임)",""],
+  ["PLP","피엘피","상품 목록 페이지(Product Listing Page)",""],
+  ["LP","엘피","랜딩 페이지(Landing Page)",""],
+  ["entry page","엔트리 페이지","진입 페이지","고객이 처음 들어오는 화면"]
+ ],
+ g4:[
+  ["GTM","지티엠","시장 출시(Go-To-Market)","신상품·캠페인 출시 전략"],
+  ["promotion setup","프로모션 셋업","프로모션 설정",""],
+  ["stacking","스태킹","쿠폰·할인 중복 적용","여러 혜택이 겹치는 것"],
+  ["schedule","스케줄","일정",""],
+  ["GTM calendar","지티엠 캘린더","출시 일정표",""],
+  ["QA","큐에이","품질 검수(Quality Assurance)","오픈 전후 오류 점검"],
+  ["UX","유엑스","사용자 경험(User Experience)",""],
+  ["stability","스터빌리티","안정성","platform stability = 플랫폼 안정성"]
+ ],
+ g5:[
+  ["cross-functional","크로스펑셔널","부서 간(협업의)",""],
+  ["stakeholder management","스테이크홀더 매니지먼트","이해관계자 관리",""],
+  ["reconciliation","리컨실리에이션","(정산) 대사·맞춤 확인","주문·금액이 맞는지 대조"],
+  ["DC","디씨","물류센터(Distribution Center)",""],
+  ["CS","씨에스","고객서비스(Customer Service)",""],
+  ["trading performance","트레이딩 퍼포먼스","거래·판매 성과",""],
+  ["insights into actions","인사이트 인투 액션","분석을 실행으로 옮김",""],
+  ["configuration","컨피규레이션","(시스템) 설정",""],
+  ["publishing","퍼블리싱","게시·노출 적용",""],
+  ["DAT","디에이티","Digital Activation Team(이 직무가 속한 팀)",""],
+  ["persona / Collaborator","페르소나","근무형태 구분 / 주 4일 출근",""],
+  ["business-level English","비즈니스 레벨 잉글리시","업무 가능한 영어 수준",""]
+ ]
+};
+function build(id){
+  var box=document.getElementById(id);
+  V[id].forEach(function(v){
+    var d=document.createElement("div");d.className="voc";
+    d.innerHTML='<div class="term">'+v[0]+'<span class="pron">'+v[1]+'</span></div>'
+      +'<div class="mean">'+v[2]+'</div>'+(v[3]?'<div class="ctx">'+v[3]+'</div>':'');
+    d.addEventListener("click",function(){d.classList.toggle("open");});
+    box.appendChild(d);
+  });
+}
+["g1","g2","g3","g4","g5"].forEach(build);
+var qb=document.getElementById("quizBtn");
+qb.addEventListener("click",function(){
+  var on=document.body.classList.toggle("quiz");
+  qb.textContent="단어장 셀프테스트: "+(on?"켜짐 (탭해서 확인)":"끄기");
+  qb.classList.toggle("on",on);
+  if(on)document.querySelectorAll(".voc.open").forEach(function(e){e.classList.remove("open");});
+});
+document.getElementById("topBtn").addEventListener("click",function(){
+  document.getElementById("topsec").scrollIntoView({behavior:"smooth"});
+});
+</script>
+</body>
+</html>
