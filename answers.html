@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>크록스 면접 답변 (영어 스크립트)</title>
+<style>
+:root{
+  --bg:#FAF9F5; --surface:#FFFFFF; --surface2:#F3F1EA; --line:rgba(0,0,0,.10);
+  --text:#1A1915; --text2:#56554F; --text3:#8B8A82;
+  --amber:#9A5B00; --amberBg:#FBE9C7; --teal:#0F6E56; --tealBg:#D8F0E7;
+  --blue:#11507F; --blueBg:#DCEBFA; --pink:#9B2F55; --pinkBg:#F8DFE9;
+  --radius:16px; --sans:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Segoe UI",Roboto,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --bg:#1A1916; --surface:#262522; --surface2:#302F2B; --line:rgba(255,255,255,.12);
+    --text:#F2F0E9; --text2:#B6B4AB; --text3:#88877F;
+    --amber:#F0C173; --amberBg:#4A3413; --teal:#7FD8B9; --tealBg:#123F33;
+    --blue:#8FC0EE; --blueBg:#11324F; --pink:#F0A6C0; --pinkBg:#47192C; }
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);
+  line-height:1.75;font-size:17px;padding:18px 16px 60px;max-width:760px;margin:0 auto;}
+h1{font-size:23px;font-weight:700;margin:2px 0 4px;}
+.sub{font-size:14px;color:var(--text2);margin:0 0 14px;}
+.actions{display:flex;gap:8px;margin:0 0 16px;flex-wrap:wrap;}
+.lk{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-size:14px;font-weight:600;
+  color:var(--teal);background:var(--tealBg);border-radius:10px;padding:8px 13px;}
+.bar{position:sticky;top:0;z-index:9;background:var(--bg);padding:10px 0;margin:0 0 6px;
+  display:flex;gap:8px;flex-wrap:wrap;border-bottom:1px solid var(--line);}
+.btn{font-family:inherit;font-size:14px;font-weight:600;background:var(--surface);color:var(--text);
+  border:1px solid var(--line);border-radius:10px;padding:9px 14px;cursor:pointer;}
+.btn.on{background:var(--teal);color:#fff;border-color:var(--teal);}
+.q{font-size:19px;font-weight:700;margin:26px 0 4px;display:flex;gap:9px;align-items:flex-start;}
+.q .n{display:inline-flex;align-items:center;justify-content:center;min-width:28px;height:28px;
+  background:var(--text);color:var(--bg);border-radius:8px;font-size:14px;flex:none;margin-top:2px;}
+.qen{font-size:14px;color:var(--text2);margin:0 0 10px 37px;}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;margin:8px 0 4px;}
+.en{font-size:17px;line-height:1.85;}
+.ko{margin-top:12px;padding-top:10px;border-top:1px dashed var(--line);font-size:14px;color:var(--text2);}
+body.quiz .ko{display:none;}
+.hl{background:var(--amberBg);color:var(--amber);padding:1px 5px;border-radius:5px;font-weight:600;}
+.hl.t{background:var(--tealBg);color:var(--teal);}
+.hl.b{background:var(--blueBg);color:var(--blue);}
+.hl.p{background:var(--pinkBg);color:var(--pink);}
+.say{display:inline-block;background:var(--blueBg);color:var(--blue);font-size:13px;font-weight:700;
+  padding:0 6px;border-radius:5px;margin-left:3px;white-space:nowrap;}
+.numbox{background:var(--tealBg);border-radius:var(--radius);padding:14px 18px;margin:14px 0;}
+.numbox h3{margin:0 0 8px;font-size:16px;color:var(--teal);}
+.numbox .row{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:baseline;font-size:15px;margin:6px 0;}
+.numbox .ko2{color:var(--text2);min-width:140px;font-weight:600;}
+.tip{font-size:13px;color:var(--text3);margin:6px 0 0 37px;}
+footer{margin-top:30px;font-size:14px;color:var(--text2);text-align:center;}
+</style>
+</head>
+<body>
+
+<h1>면접 영어 답변 스크립트</h1>
+<p class="sub">크록스코리아 · Sr. Specialist, Digital Activation · 내일 오전 10:00</p>
+<div class="actions">
+  <a class="lk" href="jd.html">JD·영단어장</a>
+  <a class="lk" href="index.html">면접 퀘스트</a>
+</div>
+
+<div class="bar">
+  <button class="btn" id="quizBtn">한국어 가리기(셀프테스트): 끄기</button>
+</div>
+
+<div class="numbox">
+  <h3>① 먼저 숫자 발음부터 — 여기서 안 버벅이면 절반 성공</h3>
+  <div class="row"><span class="ko2">억 = hundred million</span> · <span class="ko2">조 = trillion</span></div>
+  <div class="row"><span class="ko2">0→40%</span> zero to forty percent <span class="say">지로 투 포-티 퍼센트</span></div>
+  <div class="row"><span class="ko2">120% (YoY)</span> one hundred twenty percent <span class="say">원 헌드레드 트웬티 퍼센트</span></div>
+  <div class="row"><span class="ko2">20→50%</span> twenty to fifty percent <span class="say">트웬티 투 피프티 퍼센트</span></div>
+  <div class="row"><span class="ko2">65%</span> sixty-five percent <span class="say">씩스티-파이브 퍼센트</span></div>
+  <div class="row"><span class="ko2">13배</span> thirteen times / a 13x return <span class="say">써-틴 타임즈</span></div>
+  <div class="row"><span class="ko2">100억 원</span> ten billion won <span class="say">텐 빌리언 원</span></div>
+  <div class="row"><span class="ko2">회원 1만 명</span> ten thousand members <span class="say">텐 따우전드 멤버스</span></div>
+  <div class="row"><span class="ko2">10년</span> ten years <span class="say">텐 이어스</span></div>
+  <div class="row"><span class="ko2">크록스코리아 2,500억</span> 250 billion won <span class="say">투 헌드레드 피프티 빌리언 원</span></div>
+  <div class="row"><span class="ko2">글로벌 $40억</span> four billion dollars <span class="say">포 빌리언 달러스</span></div>
+</div>
+
+<div class="q"><span class="n">Q1</span><span>간단히 본인 소개 부탁드려요</span></div>
+<p class="qen">Tell me about yourself.</p>
+<div class="card">
+  <div class="en">
+  "Hi, I'm Ga-hyun Park. For the past <span class="hl t">ten years</span><span class="say">텐 이어스</span> at Kolon Industries FnC, I worked in the sports and golf fashion category, and I grew from an online MD into the <span class="hl">single owner of the whole onsite platform</span>.
+  The question that drives my work is simple — <span class="hl b">'who buys this product, and why?'</span>
+  Starting from that, I expanded my own role from merchandising into performance marketing, D2C, and data.
+  My proudest work is <span class="hl">G/FORE Korea</span> — I launched the official site from zero and grew it into the brand's <span class="hl">number-one channel</span>, from <span class="hl t">zero to forty percent</span><span class="say">지로 투 포-티 퍼센트</span> of revenue.
+  Now I want to bring that onsite and launch experience to a global brand like Crocs, and keep asking the next question: <span class="hl b">how do we make every launch faster, cleaner, and more loved by customers?</span>"
+  </div>
+  <div class="ko"><b>핵심:</b> 10년 / MD→마케팅→온사이트 단일 담당자 / "누가 왜 사는가" 질문 / G/FORE 0→40% 1위 채널 / 앞으로 던지고 싶은 질문으로 마무리.</div>
+</div>
+
+<div class="q"><span class="n">Q2</span><span>이 포지션을 어떻게 이해하고, 비슷한 일을 해봤나요? 지금 업무 플로우는?</span></div>
+<p class="qen">How do you understand this role, have you done similar work, and what's your current workflow?</p>
+<div class="card">
+  <div class="en">
+  "The way I understand it, this role is the <span class="hl">local owner of the .COM and APP onsite experience</span>.
+  The <span class="hl b">Digital Hub</span> does the actual setup, and I own the <span class="hl">strategy, briefs, validation, go-live sign-off, and final accountability</span> — so every product and campaign launches accurately and on time.
+  I've essentially done this. At G/FORE I owned onsite merchandising, exclusive products, launch promotions, and search visibility, and <span class="hl">I made the final quality check before anything went live</span>.
+  My current workflow is: I plan the campaign and write the brief, <span class="hl p">align manufacturing, sales, and data teams on shared KPIs</span>, hand execution to agencies or internal teams, then validate quality before go-live and review performance after.
+  <span class="hl b">I haven't used SFCC directly</span>, but I've run our commerce platform with GA4, SQL, and our internal data warehouse, so I'm confident I'll pick it up fast."
+  </div>
+  <div class="ko"><b>핵심:</b> 로컬 오너 = 전략·브리프·검증·승인·책임, 허브는 실행. 나도 같은 일 해봄(최종 품질 체크 포함). 워크플로우: 기획→브리프→KPI 합의→실행 위임→검증→리뷰. SFCC는 솔직히 + 빠른 습득.</div>
+</div>
+
+<div class="q"><span class="n">Q3</span><span>핵심 경력(캠페인)과 기여도는?</span></div>
+<p class="qen">Tell me about a key campaign and your contribution.</p>
+<div class="card">
+  <div class="en">
+  "My core work was building the <span class="hl">full funnel</span> at G/FORE — from a customer discovering a new product, to getting interested, to buying.
+  I designed <span class="hl b">non-promotional campaigns</span>, not just discounts, and I kept a <span class="hl">strict quality check on every ad</span> before it went live.
+  Two examples are <span class="hl">MY G/FORE</span>, our membership program, and our <span class="hl">PRE-OPEN launch promotion</span>.
+  Together they grew the official site from <span class="hl t">zero to forty percent</span><span class="say">지로 투 포-티 퍼센트</span> of brand revenue, with over <span class="hl t">one hundred twenty percent</span><span class="say">원 헌드레드 트웬티 퍼센트</span> year-over-year growth in both customers and sales.
+  The two most effective channels were our <span class="hl p">Kakao Plus Friend channel</span> and <span class="hl p">Naver brand search</span> — brand search alone returned about <span class="hl t">thirteen times</span><span class="say">써-틴 타임즈</span> our ad spend.
+  The biggest lesson: <span class="hl b">how powerful it is to truly own your brand's loyal customers, instead of renting traffic.</span>"
+  </div>
+  <div class="ko"><b>핵심:</b> 풀퍼널 / 비-할인 캠페인 + 엄격한 광고 퀄리티 체크 / MY G/FORE·선오픈 프로모션 / 0→40%, YoY 120%+ / 카카오 플친·네이버 브랜드검색(13배) / 충성고객 소유의 중요성.</div>
+</div>
+
+<div class="q"><span class="n">Q4</span><span>가장 어려웠던 점은?</span></div>
+<p class="qen">What was the most difficult part?</p>
+<div class="card">
+  <div class="en">
+  "The hardest part was <span class="hl">understanding the brand itself</span>.
+  G/FORE is a <span class="hl b">Richemont brand</span>, and Kolon in Korea is its <span class="hl b">distributor for Asia</span> — so I had to deeply understand a luxury brand's identity that we did not create.
+  Before this, I only handled brands Kolon manufactured itself, so my first year was tough <span class="hl">aligning with an external luxury brand's standards</span>.
+  What solved it was <span class="hl p">communication</span> — I proactively talked with every related team, <span class="hl">reduced the information gap</span>, and once I understood the brand fully, I could finally <span class="hl t">lead the work instead of just following</span>.
+  That's exactly why I'm comfortable working between a global HQ, a regional Hub, and local teams."
+  </div>
+  <div class="ko"><b>핵심:</b> G/FORE=리치몬드 브랜드, 코오롱=아시아 디스트리뷰터 / 외부 럭셔리 브랜드 속성 이해가 관건 / 첫 1년 얼라인 어려움 / 적극 커뮤니케이션으로 정보 비대칭↓ → 주도적으로 / 그래서 HQ·허브·로컬 사이 협업에 강함.</div>
+</div>
+
+<div class="q"><span class="n">Q5</span><span>제가 물어볼 역질문</span></div>
+<p class="qen">Questions I'll ask them.</p>
+<div class="card">
+  <div class="en">
+  • "Is the <span class="hl b">Digital Hub</span> based here in Korea, or overseas?"<br>
+  • "Where do the <span class="hl">biggest gaps with the Digital Hub</span> happen today, and where do those difficulties come from?"<br>
+  • "When you build strategy directly, <span class="hl">what matters most</span> to you — <span class="hl t">GMV, profit, or customer acquisition?</span>"<br>
+  • "What does <span class="hl">success look like for this role in the first six months</span>?"
+  </div>
+  <div class="ko"><b>핵심:</b> 허브 위치 / 허브와의 갭·원인 / 전략 시 최우선(거래액·이익·고객획득) / 6개월 성공 기준. 직무 이해 + 주도성이 보이는 질문.</div>
+</div>
+
+<p class="tip" style="margin-left:0;margin-top:22px;font-size:14px;color:var(--text2);">전달 팁 — ① 숫자는 천천히, 콤마(,)에서 한 박자 쉬기. ② 막히면 "Let me think for a second." ③ 짧은 문장이 화려한 문장보다 강하다. ④ 핵심 숫자(0→40%, 13배, 120%)는 위 박스로 5번 소리내어 연습.</p>
+
+<footer>가현님, 이 직무는 "온사이트 오너 + 거버넌스 + 풀퍼널 경험"이 핵심이에요. 자신 있게!</footer>
+
+<script>
+var qb=document.getElementById("quizBtn");
+qb.addEventListener("click",function(){
+  var on=document.body.classList.toggle("quiz");
+  qb.textContent="한국어 가리기(셀프테스트): "+(on?"켜짐":"끄기");
+  qb.classList.toggle("on",on);
+});
+</script>
+</body>
+</html>
